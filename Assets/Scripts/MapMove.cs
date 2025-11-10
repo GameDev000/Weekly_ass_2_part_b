@@ -1,25 +1,28 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MapMove : MonoBehaviour
 {
-     public float speed = 5f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private InputAction moveAction;
+
+    private void OnEnable()
     {
-        
+        moveAction.Enable();
     }
 
-    // Update is called once per frame
+    private void OnDisable()
+    {
+        moveAction.Disable();
+    }
+    void Start()
+    {
+    }
+
     void Update()
     {
-         if (Input.GetKey(KeyCode.RightArrow))
-            transform.position += new Vector3(0.3f, 0, 0) * speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.LeftArrow))
-            transform.position += new Vector3(-0.3f, 0, 0) * speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.UpArrow))
-            transform.position += new Vector3(0, 0.3f, 0) * speed * Time.deltaTime;
-        if (Input.GetKey(KeyCode.DownArrow))
-            transform.position += new Vector3(0, -0.3f, 0) * speed * Time.deltaTime;
-
+        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector3 movement = new Vector3(input.x * 0.28f, input.y * 0.28f, 0f);
+        transform.position += movement * speed * Time.deltaTime;
     }
 }
