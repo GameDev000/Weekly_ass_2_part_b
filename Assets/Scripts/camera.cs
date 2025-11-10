@@ -2,19 +2,28 @@ using UnityEngine;
 
 public class CameraAutoSize : MonoBehaviour
 {
+    [Tooltip("ה-orthographicSize בזמן ייחוס (כשגובה המסך = referenceScreenHeight)")]
+    public float referenceOrthoSize = 7f;
+
+    [Tooltip("גובה-מסך ייחוס בפיקסלים. אפשר להשאיר 0 כדי שיילקח אוטומטית בתחילת הריצה.")]
+    public int referenceScreenHeight = 0;
+
     private Camera cam;
-    private float res = 16f / 9f;
-    private float size = 5f; 
-    
-    void Start()
+
+    void Awake()
     {
         cam = GetComponent<Camera>();
         cam.orthographic = true;
     }
 
+    void Start()
+    {
+        if (referenceScreenHeight <= 0)
+            referenceScreenHeight = Screen.height;
+    }
+
     void Update()
     {
-        float currentAspect = (float)Screen.width / Screen.height;
-        cam.orthographicSize = size * (res / currentAspect);
+                cam.orthographicSize = referenceOrthoSize * ((float)Screen.height / referenceScreenHeight);
     }
 }
