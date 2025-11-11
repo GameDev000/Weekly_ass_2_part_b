@@ -37,4 +37,4 @@ By recalculating the size based on the new aspect ratio, the game keeps all obje
 - **Main Camera** – Orthographic camera that adjusts its size dynamically when the device rotates.  
 - **Canvas (Mini-map)** – displays a small dot representing the player's position, updated in real time.
 
-  <a href="https://itch.io/game/edit/4030185">itch.io</a>
+  <a href="https://itamar000.itch.io/weekly-ass-2-part-b">itch.io</a>
