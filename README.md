@@ -1,4 +1,4 @@
-# Weekly_Assignment_2_Part_A_Oscillator
+# Weekly_ass_2_part_b
 
 ### What this project is
 A simple 2D Unity project where the player moves around using the arrow keys and sees their current position on a small **mini-map** in the top-right corner of the screen.  
