@@ -3,12 +3,12 @@ using UnityEngine;
 public class CameraAutoSize : MonoBehaviour
 {
     [Tooltip("ה-orthographicSize בזמן ייחוס (כשגובה המסך = referenceScreenHeight)")]
-    public float referenceOrthoSize = 7f;
+    [SerializeField] public float referenceOrthoSize = 7f;
 
     [Tooltip("גובה-מסך ייחוס בפיקסלים. אפשר להשאיר 0 כדי שיילקח אוטומטית בתחילת הריצה.")]
-    public int referenceScreenHeight = 0;
+    [SerializeField] public int referenceScreenHeight = 0;
 
-    private Camera cam;
+    [SerializeField] private Camera cam;
 
     void Awake()
     {

@@ -5,6 +5,7 @@ public class MapMove : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private InputAction moveAction;
+    [SerializeField] private float factor = 0.28f;
 
     private void OnEnable()
     {
@@ -22,7 +23,7 @@ public class MapMove : MonoBehaviour
     void Update()
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
-        Vector3 movement = new Vector3(input.x * 0.28f, input.y * 0.28f, 0f);
+        Vector3 movement = new Vector3(input.x * factor, input.y * factor, 0f);
         transform.position += movement * speed * Time.deltaTime;
     }
 }
