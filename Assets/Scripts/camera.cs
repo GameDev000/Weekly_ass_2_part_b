@@ -22,11 +22,10 @@ public class CameraAutoSize : MonoBehaviour
         {
             referenceScreenHeight = Screen.height;
         }
-            
     }
 
     void Update()
     {
-        cam.orthographicSize = referenceOrthoSize*((float)Screen.height/referenceScreenHeight);
+        cam.orthographicSize = referenceOrthoSize * ( (float) Screen.height / referenceScreenHeight );
     }
 }
