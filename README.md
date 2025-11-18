@@ -1,4 +1,4 @@
-# Weekly_Assignment_2_Part_A_Oscillator
+# Weekly_ass_2_part_b
 
 ### What this project is
 A simple 2D Unity project where the player moves around using the arrow keys and sees their current position on a small **mini-map** in the top-right corner of the screen.  
@@ -37,4 +37,4 @@ By recalculating the size based on the new aspect ratio, the game keeps all obje
 - **Main Camera** – Orthographic camera that adjusts its size dynamically when the device rotates.  
 - **Canvas (Mini-map)** – displays a small dot representing the player's position, updated in real time.
 
-  <a href="https://itch.io/game/edit/4030185">itch.io</a>
+  <a href="https://itamar-raz-dev-game.itch.io/weekly-ass-2-part-b">itch.io</a>
